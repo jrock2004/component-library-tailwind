@@ -6,7 +6,13 @@ const path = require('path');
 module.exports = {
   content: [path.join(__dirname, './src/**/*.(js|jsx|ts|tsx)')],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#2a9d8f',
+        primaryShade: '#217b70',
+      },
+    },
   },
   plugins: [],
+  purge: ['./src/components/**/*.(js|jsx|ts|tsx)'],
 };
