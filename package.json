@@ -1,7 +1,14 @@
 {
-  "name": "jrock2004-component-library",
+  "name": "@jrock2004/component-library",
   "version": "0.1.0",
-  "private": true,
+  "author": "John Costanzo<jrock2004>",
+  "description": "A component library for React based on tailwindcss",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -18,7 +25,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && yarn run build:esm && yarn run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "husky install",

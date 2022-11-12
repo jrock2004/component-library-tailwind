@@ -1,4 +1,4 @@
-import { ReactElement, SyntheticEvent } from 'react';
+import React, { ReactElement, SyntheticEvent } from 'react';
 
 export const Button = ({
   label,
